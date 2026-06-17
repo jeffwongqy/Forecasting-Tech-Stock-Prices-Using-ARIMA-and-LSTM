@@ -1,1 +1,1 @@
-# Forecasting-Tech-Stock-Prices-Using-ARIMA-and-LSTM
+# Forecasting Tech Stock Prices Using ARIMA and LSTM
