@@ -134,20 +134,10 @@ Therefore, a differencing order of: d = 1 was selected for all ARIMA models.
 
 
 ### 4.3 ARIMA Training 
-Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected:
+Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected. The models were trained using the training datasets.
 
-TBC
+<img width="787" height="486" alt="aapl" src="https://github.com/user-attachments/assets/9d23a0fc-6703-4403-87cd-1fab2464d278" />
 
-The models were trained using the training datasets.
-
-Model summaries were examined to evaluate:
-
-Parameter significance
-Residual variance
-Information criteria (AIC and BIC)
-Overall model adequacy
-
-For forecasting, a rolling forecasting strategy was implemented. After each prediction, the actual observation was appended to the historical dataset before generating the next forecast. This approach mimics real-world forecasting conditions and improves prediction reliability.
 
 
 ### 4.4 ARIMA Evaluation
