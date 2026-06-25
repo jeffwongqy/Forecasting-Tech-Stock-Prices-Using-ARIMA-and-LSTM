@@ -30,9 +30,56 @@ AR (Autoregressive): dependence on previous observations.
 I (Integrated): differencing to achieve stationarity.
 MA (Moving Average): dependence on previous forecast errors.
 
-The general ARIMA model is represented as: ARIMA(p,d,q)
-where:
+The general ARIMA model is represented as: ARIMA(p,d,q), where: (p) = autoregressive order, (d) = differencing order, (q) = moving average order.
 
-(p) = autoregressive order
-(d) = differencing order
-(q) = moving average order
+### 4.1 Stationarity Test - PACF, ACF, and ADFuller
+Before fitting ARIMA models, the stock price series were examined for stationarity.
+
+(i) Autocorrelation Function (ACF)
+
+The ACF plots were generated to identify serial dependencies across lagged observations. The slow decay observed in the ACF plots indicated strong autocorrelation and suggested non-stationary behavior.
+
+(ii) Partial Autocorrelation Function (PACF)
+
+PACF plots were used to identify the number of significant autoregressive terms. Significant spikes in the initial lags suggested the presence of autoregressive components.
+
+(iii) Augmented Dickey-Fuller (ADF) Test
+
+The ADF test was performed on the training data for Apple, Microsoft, and Amazon.
+
+Hypotheses:
+
+H₀: The time series is non-stationary.
+H₁: The time series is stationary.
+
+The initial ADF results showed insufficient evidence to reject the null hypothesis, indicating that the original stock price series were non-stationary and required differencing.
+
+### 4.2 First Differencing - PACF, ACF, and ADFuller
+
+To remove trend effects and stabilize the mean, first-order differencing was applied:
+
+[
+Y't = Y_t - Y{t-1}
+]
+
+The differenced series were then re-evaluated.
+
+ACF Analysis
+
+After differencing, the autocorrelation structure decayed more rapidly, suggesting improved stationarity.
+
+PACF Analysis
+
+The PACF plots showed fewer significant spikes, indicating that the differenced series could be adequately modeled using a small number of AR terms.
+
+ADF Test Results
+
+The ADF test was repeated on the differenced data. The resulting p-values became significantly smaller, providing evidence that the transformed series were stationary.
+
+Therefore, a differencing order of:
+
+[
+d = 1
+]
+
+was selected for all ARIMA models.
