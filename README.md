@@ -147,12 +147,13 @@ Based on the stationarity analysis and ACF/PACF observations, the following ARIM
 #### 4.4.1 Diagnostics Plot
 Diagnostic plots were generated using the fitted ARIMA models.
 
-The diagnostics included:
+<img width="989" height="790" alt="aapl_plot" src="https://github.com/user-attachments/assets/c67c5474-fc27-4f87-b518-1fc7c0b377f1" />
 
-Standardized residuals.
-Histogram and density estimate of residuals.
-Normal Q-Q plot.
-Correlogram of residuals.
+<img width="989" height="790" alt="msft_plot" src="https://github.com/user-attachments/assets/79bc4f52-ba04-4522-b148-ed01eb52b3ea" />
+
+<img width="989" height="790" alt="amzn_plot" src="https://github.com/user-attachments/assets/ad98c2fe-457f-47b2-ab67-55cc4cb286b0" />
+
+
 
 The residuals were expected to resemble white noise, indicating that the model successfully captured the underlying structure of the stock price series.
 
