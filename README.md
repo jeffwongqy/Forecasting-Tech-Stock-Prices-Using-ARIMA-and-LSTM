@@ -173,17 +173,22 @@ The ARIMA rolling forecasts were generated on the testing dataset and evaluated 
 
 <img width="1005" height="452" alt="aapl" src="https://github.com/user-attachments/assets/38a3166e-0f5a-411d-b42d-14ff2ba847f4" />
 
+<img width="600" height="130" alt="aapl_m" src="https://github.com/user-attachments/assets/39ee573c-0580-4295-9b69-1d166d9c3b2d" />
+
 
 
 **Microsoft:**
 
 <img width="1005" height="452" alt="msft" src="https://github.com/user-attachments/assets/2134c8ce-79d3-4282-a024-c3bb3bbbd128" />
 
+<img width="600" height="130" alt="msft_m" src="https://github.com/user-attachments/assets/83245491-b0d9-412f-ba23-ad54dbc928b9" />
 
-**Amazon: **
+
+**Amazon:**
 
 <img width="1005" height="452" alt="amzn" src="https://github.com/user-attachments/assets/4fe0e598-675e-4e5c-985b-3e8946aceee8" />
 
+<img width="600" height="130" alt="amzn_m" src="https://github.com/user-attachments/assets/2f190135-1623-4faf-91c7-ca4c1041727c" />
 
 
 
