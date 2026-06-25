@@ -106,14 +106,21 @@ After differencing, the autocorrelation structure decayed more rapidly, suggesti
 <img width="850" height="550" alt="amzn_acf" src="https://github.com/user-attachments/assets/ef37294e-bea0-40bc-aff3-af69ed46dc3c" />
 
 
-
-
-
-(ii) PACF Analysis
-
+#### 4.2.2 PACF Analysis
 The PACF plots showed fewer significant spikes, indicating that the differenced series could be adequately modeled using a small number of AR terms.
 
-(iii) ADF Test Results
+<img width="850" height="550" alt="aapl_pacf" src="https://github.com/user-attachments/assets/0463e7b8-4125-4d66-8046-3f4037a8fef7" />
+
+<img width="850" height="550" alt="msft_pacf" src="https://github.com/user-attachments/assets/4ea52a29-76e6-4756-9703-8305c8a6dc63" />
+
+<img width="850" height="550" alt="amzn_pacf" src="https://github.com/user-attachments/assets/79b99544-e8f2-41cc-bd79-5d127991fddb" />
+
+
+
+
+
+
+#### 4.2.3 ADF Test Results
 
 The ADF test was repeated on the differenced data. The resulting p-values became significantly smaller, providing evidence that the transformed series were stationary.
 
