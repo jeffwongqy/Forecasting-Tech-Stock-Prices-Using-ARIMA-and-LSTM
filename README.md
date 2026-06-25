@@ -42,7 +42,6 @@ Before fitting ARIMA models, the stock price series were examined for stationari
 <img width="1260" height="580" alt="amzn" src="https://github.com/user-attachments/assets/175fa77b-23aa-4e49-b693-25a93a20ef4d" />
 
 #### 4.1.1 Autocorrelation Function (ACF)
-
 The ACF plots were generated to identify serial dependencies across lagged observations. The slow decay observed in the ACF plots indicated strong autocorrelation and suggested non-stationary behavior.
 
 <img width="850" height="550" alt="aapl_acf" src="https://github.com/user-attachments/assets/0e3fe490-0a71-4eb7-8f36-8b50da13c28c" />
@@ -52,8 +51,13 @@ The ACF plots were generated to identify serial dependencies across lagged obser
 <img width="850" height="550" alt="amzn_acf" src="https://github.com/user-attachments/assets/39a28112-c9fd-40a8-929c-ac552db5b62a" />
 
 #### 4.1.2 Partial Autocorrelation Function (PACF)
-
 PACF plots were used to identify the number of significant autoregressive terms. Significant spikes in the initial lags suggested the presence of autoregressive components.
+
+<img width="850" height="550" alt="aapl_pacf" src="https://github.com/user-attachments/assets/257dc7aa-197d-44e4-81e8-82f688aaada1" />
+
+<img width="850" height="550" alt="msft_pacf" src="https://github.com/user-attachments/assets/6d949cdd-d544-413b-b1e3-3534acc2fd9c" />
+
+<img width="850" height="550" alt="amzn_pacf" src="https://github.com/user-attachments/assets/9edb2900-3acd-4b6b-aa80-901050e6d3a8" />
 
 #### 4.1.3 Augmented Dickey-Fuller (ADF) Test
 
