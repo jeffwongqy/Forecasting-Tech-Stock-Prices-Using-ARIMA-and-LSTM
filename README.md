@@ -56,30 +56,39 @@ The initial ADF results showed insufficient evidence to reject the null hypothes
 
 ### 4.2 First Differencing - PACF, ACF, and ADFuller
 
-To remove trend effects and stabilize the mean, first-order differencing was applied:
-
-[
-Y't = Y_t - Y{t-1}
-]
+To remove trend effects and stabilize the mean, first-order differencing was applied: Y't = Y_t - Y{t-1}
 
 The differenced series were then re-evaluated.
 
-ACF Analysis
+(i) ACF Analysis
 
 After differencing, the autocorrelation structure decayed more rapidly, suggesting improved stationarity.
 
-PACF Analysis
+(ii) PACF Analysis
 
 The PACF plots showed fewer significant spikes, indicating that the differenced series could be adequately modeled using a small number of AR terms.
 
-ADF Test Results
+(iii) ADF Test Results
 
 The ADF test was repeated on the differenced data. The resulting p-values became significantly smaller, providing evidence that the transformed series were stationary.
 
-Therefore, a differencing order of:
+Therefore, a differencing order of: d = 1 was selected for all ARIMA models.
 
-[
-d = 1
-]
+### 4.3 ARIMA Training 
+Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected:
 
-was selected for all ARIMA models.
+Company	ARIMA Order
+Apple (AAPL)	ARIMA(1,1,1)
+Microsoft (MSFT)	ARIMA(1,1,1)
+Amazon (AMZN)	ARIMA(2,1,2)
+
+The models were trained using the training datasets.
+
+Model summaries were examined to evaluate:
+
+Parameter significance
+Residual variance
+Information criteria (AIC and BIC)
+Overall model adequacy
+
+For forecasting, a rolling forecasting strategy was implemented. After each prediction, the actual observation was appended to the historical dataset before generating the next forecast. This approach mimics real-world forecasting conditions and improves prediction reliability.
