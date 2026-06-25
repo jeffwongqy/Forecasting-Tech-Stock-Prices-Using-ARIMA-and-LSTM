@@ -60,13 +60,18 @@ PACF plots were used to identify the number of significant autoregressive terms.
 <img width="850" height="550" alt="amzn_pacf" src="https://github.com/user-attachments/assets/9edb2900-3acd-4b6b-aa80-901050e6d3a8" />
 
 #### 4.1.3 Augmented Dickey-Fuller (ADF) Test
-
 The ADF test was performed on the training data for Apple, Microsoft, and Amazon.
 
 Hypotheses:
-
 H₀: The time series is non-stationary.
+
 H₁: The time series is stationary.
+
+<img width="225" height="50" alt="aapl_adfuller" src="https://github.com/user-attachments/assets/972dde78-6cf0-4ee6-ba04-c2a257892b3e" />
+
+<img width="225" height="50" alt="msft_adfuller" src="https://github.com/user-attachments/assets/2641239e-15d6-4e50-bf4a-81ff56833680" />
+
+<img width="225" height="50" alt="amzn_adfuller" src="https://github.com/user-attachments/assets/de13604a-1444-4dd2-a4ef-0a5884bf23d3" />
 
 The initial ADF results showed insufficient evidence to reject the null hypothesis, indicating that the original stock price series were non-stationary and required differencing.
 
