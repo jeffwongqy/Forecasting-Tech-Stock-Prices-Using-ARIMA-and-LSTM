@@ -35,15 +35,21 @@ The general ARIMA model is represented as: ARIMA(p,d,q), where: (p) = autoregres
 ### 4.1 Stationarity Test - PACF, ACF, and ADFuller
 Before fitting ARIMA models, the stock price series were examined for stationarity.
 
-(i) Autocorrelation Function (ACF)
+<img width="1260" height="580" alt="aapl" src="https://github.com/user-attachments/assets/22ed8125-4a37-4739-a699-b8a7c124a21a" />
+
+<img width="1260" height="580" alt="msft" src="https://github.com/user-attachments/assets/18102929-24c4-475c-a50c-33c7004d5841" />
+
+<img width="1260" height="580" alt="amzn" src="https://github.com/user-attachments/assets/175fa77b-23aa-4e49-b693-25a93a20ef4d" />
+
+#### 4.1.1 Autocorrelation Function (ACF)
 
 The ACF plots were generated to identify serial dependencies across lagged observations. The slow decay observed in the ACF plots indicated strong autocorrelation and suggested non-stationary behavior.
 
-(ii) Partial Autocorrelation Function (PACF)
+#### 4.1.2 Partial Autocorrelation Function (PACF)
 
 PACF plots were used to identify the number of significant autoregressive terms. Significant spikes in the initial lags suggested the presence of autoregressive components.
 
-(iii) Augmented Dickey-Fuller (ADF) Test
+#### 4.1.3 Augmented Dickey-Fuller (ADF) Test
 
 The ADF test was performed on the training data for Apple, Microsoft, and Amazon.
 
@@ -53,6 +59,7 @@ H₀: The time series is non-stationary.
 H₁: The time series is stationary.
 
 The initial ADF results showed insufficient evidence to reject the null hypothesis, indicating that the original stock price series were non-stationary and required differencing.
+
 
 ### 4.2 First Differencing - PACF, ACF, and ADFuller
 
