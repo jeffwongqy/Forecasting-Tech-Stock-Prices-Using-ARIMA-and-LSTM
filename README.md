@@ -163,13 +163,27 @@ The residuals were expected to resemble white noise, indicating that the model s
 #### 4.4.2 Performance Metrics 
 Two evaluation metrics were used:
 
-(1) Root Mean Squared Error (RMSE)
+* **Root Mean Squared Error (RMSE):** measures average prediction error magnitude.
 
-RMSE measures average prediction error magnitude.
+* **Coefficient of Determination (R²):** measures how well the model explains the variability in stock prices.
 
-Coefficient of Determination (R²)
+The ARIMA rolling forecasts were generated on the testing dataset and evaluated using RMSE and R². Higher R² values and lower RMSE values indicate better forecasting performance.
 
-R² measures how well the model explains the variability in stock prices.
+**Apple:**
 
-The ARIMA forecasts were generated on the testing dataset and evaluated using RMSE and R². Higher R² values and lower RMSE values indicate better forecasting performance.
+<img width="1005" height="452" alt="aapl" src="https://github.com/user-attachments/assets/38a3166e-0f5a-411d-b42d-14ff2ba847f4" />
+
+
+
+**Microsoft:**
+
+<img width="1005" height="452" alt="msft" src="https://github.com/user-attachments/assets/2134c8ce-79d3-4282-a024-c3bb3bbbd128" />
+
+
+**Amazon: **
+
+<img width="1005" height="452" alt="amzn" src="https://github.com/user-attachments/assets/4fe0e598-675e-4e5c-985b-3e8946aceee8" />
+
+
+
 
