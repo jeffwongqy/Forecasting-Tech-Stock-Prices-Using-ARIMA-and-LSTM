@@ -68,15 +68,15 @@ H₀: The time series is non-stationary.
 
 H₁: The time series is stationary.
 
-Apple:
+**Apple:**
 
 <img width="225" height="50" alt="aapl_adfuller" src="https://github.com/user-attachments/assets/972dde78-6cf0-4ee6-ba04-c2a257892b3e" />
 
-Microsoft:
+**Microsoft:**
 
 <img width="225" height="50" alt="msft_adfuller" src="https://github.com/user-attachments/assets/2641239e-15d6-4e50-bf4a-81ff56833680" />
 
-Amazon: 
+**Amazon:**
 
 <img width="225" height="50" alt="amzn_adfuller" src="https://github.com/user-attachments/assets/de13604a-1444-4dd2-a4ef-0a5884bf23d3" />
 
