@@ -77,10 +77,7 @@ Therefore, a differencing order of: d = 1 was selected for all ARIMA models.
 ### 4.3 ARIMA Training 
 Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected:
 
-Company	ARIMA Order
-Apple (AAPL)	ARIMA(1,1,1)
-Microsoft (MSFT)	ARIMA(1,1,1)
-Amazon (AMZN)	ARIMA(2,1,2)
+TBC
 
 The models were trained using the training datasets.
 
