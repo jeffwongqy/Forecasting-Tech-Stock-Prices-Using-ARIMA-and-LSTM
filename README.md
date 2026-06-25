@@ -115,16 +115,23 @@ The PACF plots showed fewer significant spikes, indicating that the differenced 
 
 <img width="850" height="550" alt="amzn_pacf" src="https://github.com/user-attachments/assets/79b99544-e8f2-41cc-bd79-5d127991fddb" />
 
-
-
-
-
-
 #### 4.2.3 ADF Test Results
-
 The ADF test was repeated on the differenced data. The resulting p-values became significantly smaller, providing evidence that the transformed series were stationary.
 
+**Apple:**
+
+<img width="225" height="50" alt="aapl_adfuller" src="https://github.com/user-attachments/assets/e41108d3-1214-433d-af17-1031a66c120e" />
+
+**Microsoft:**
+
+<img width="225" height="50" alt="msft_adfuller" src="https://github.com/user-attachments/assets/2c5ee802-534e-4042-814f-0db150e3d9b9" />
+
+**Amazon:**
+
+<img width="225" height="50" alt="amzn_adfuller" src="https://github.com/user-attachments/assets/8e36800b-6c58-4944-a0ac-63df6c5d340e" />
+
 Therefore, a differencing order of: d = 1 was selected for all ARIMA models.
+
 
 ### 4.3 ARIMA Training 
 Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected:
