@@ -84,14 +84,30 @@ The initial ADF results showed insufficient evidence to reject the null hypothes
 
 
 ### 4.2 First Differencing - PACF, ACF, and ADFuller
-
 To remove trend effects and stabilize the mean, first-order differencing was applied: Y't = Y_t - Y{t-1}
+
+<img width="1260" height="580" alt="aapl" src="https://github.com/user-attachments/assets/37d84724-81be-40f8-b4b3-6741a97e24e2" />
+
+<img width="1260" height="580" alt="msft" src="https://github.com/user-attachments/assets/6e6cc6bd-cb6f-40d9-89c6-b76aea09015c" />
+
+<img width="1260" height="580" alt="amzn" src="https://github.com/user-attachments/assets/f28cd888-8d72-4c94-8c6b-c787928b8500" />
 
 The differenced series were then re-evaluated.
 
-(i) ACF Analysis
+
+#### 4.2.1 ACF Analysis
 
 After differencing, the autocorrelation structure decayed more rapidly, suggesting improved stationarity.
+
+<img width="850" height="550" alt="aapl_acf" src="https://github.com/user-attachments/assets/3fe05075-81c8-4d79-bae7-374f57bfac4b" />
+
+<img width="850" height="550" alt="msft_acf" src="https://github.com/user-attachments/assets/e8729e63-6652-41c3-9086-8b731fd805d1" />
+
+<img width="850" height="550" alt="amzn_acf" src="https://github.com/user-attachments/assets/ef37294e-bea0-40bc-aff3-af69ed46dc3c" />
+
+
+
+
 
 (ii) PACF Analysis
 
