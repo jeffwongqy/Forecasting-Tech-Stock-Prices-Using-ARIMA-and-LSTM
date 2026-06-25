@@ -136,8 +136,11 @@ Therefore, a differencing order of: d = 1 was selected for all ARIMA models.
 ### 4.3 ARIMA Training 
 Based on the stationarity analysis and ACF/PACF observations, the following ARIMA configurations were selected. The models were trained using the training datasets.
 
-<img width="787" height="486" alt="aapl" src="https://github.com/user-attachments/assets/9d23a0fc-6703-4403-87cd-1fab2464d278" />
+<img width="750" height="485" alt="aapl" src="https://github.com/user-attachments/assets/9d23a0fc-6703-4403-87cd-1fab2464d278" />
 
+<img width="750" height="485" alt="msft" src="https://github.com/user-attachments/assets/b59fbee4-3d62-4ed6-8baa-e8ddf260ce22" />
+
+<img width="750" height="485" alt="amazon" src="https://github.com/user-attachments/assets/8521a16e-46c6-4581-9159-838e299aa2a5" />
 
 
 ### 4.4 ARIMA Evaluation
