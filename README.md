@@ -89,3 +89,31 @@ Information criteria (AIC and BIC)
 Overall model adequacy
 
 For forecasting, a rolling forecasting strategy was implemented. After each prediction, the actual observation was appended to the historical dataset before generating the next forecast. This approach mimics real-world forecasting conditions and improves prediction reliability.
+
+
+### 4.4 ARIMA Evaluation
+#### 4.4.1 Diagnostics Plot
+Diagnostic plots were generated using the fitted ARIMA models.
+
+The diagnostics included:
+
+Standardized residuals.
+Histogram and density estimate of residuals.
+Normal Q-Q plot.
+Correlogram of residuals.
+
+The residuals were expected to resemble white noise, indicating that the model successfully captured the underlying structure of the stock price series.
+
+#### 4.4.2 Performance Metrics 
+Two evaluation metrics were used:
+
+(1) Root Mean Squared Error (RMSE)
+
+RMSE measures average prediction error magnitude.
+
+Coefficient of Determination (R²)
+
+R² measures how well the model explains the variability in stock prices.
+
+The ARIMA forecasts were generated on the testing dataset and evaluated using RMSE and R². Higher R² values and lower RMSE values indicate better forecasting performance.
+
