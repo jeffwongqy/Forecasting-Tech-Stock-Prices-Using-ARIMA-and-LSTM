@@ -320,5 +320,12 @@ Two evaluation metrics were used:
 
 <img width="660" height="170" alt="amzn_m" src="https://github.com/user-attachments/assets/29526ceb-c79e-413c-8fa4-e9c3a817f8e6" />
 
+Overall, the LSTM model demonstrated the ability to capture nonlinear market dynamics and temporal dependencies, making it a powerful alternative to traditional ARIMA forecasting methods.
 
+
+## 6. Conclusion 
+
+This project developed and evaluated both ARIMA and LSTM models for forecasting technology stock prices. ARIMA provided a strong statistical baseline through stationarity analysis, differencing, and autoregressive modeling, while LSTM leveraged deep learning to learn complex temporal relationships directly from sequential data.
+
+The workflow included data preprocessing, stationarity testing, model training, forecasting, and performance evaluation using RMSE and R² metrics. By comparing both approaches on Apple, Microsoft, and Amazon stock data, the study provides valuable insights into the effectiveness of traditional time series techniques versus modern deep learning methods for financial forecasting. Future work may include multivariate forecasting, sentiment analysis integration, and advanced architectures such as GRU, Bidirectional LSTM, or Transformer-based models to further improve predictive performance.
 
