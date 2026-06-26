@@ -329,3 +329,7 @@ This project developed and evaluated both ARIMA and LSTM models for forecasting 
 
 The workflow included data preprocessing, stationarity testing, model training, forecasting, and performance evaluation using RMSE and R² metrics. By comparing both approaches on Apple, Microsoft, and Amazon stock data, the study provides valuable insights into the effectiveness of traditional time series techniques versus modern deep learning methods for financial forecasting. Future work may include multivariate forecasting, sentiment analysis integration, and advanced architectures such as GRU, Bidirectional LSTM, or Transformer-based models to further improve predictive performance.
 
+## References:
+[1] Xia, X. (2024). Apple, Microsoft, and Amazon stock price prediction based on ARIMA and LSTM. Applied and Computational Engineering, 53(1), 181–189. https://doi.org/10.54254/2755-2721/53/20241352
+
+‌
