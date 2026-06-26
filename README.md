@@ -213,6 +213,8 @@ aapl_test_scaled = aapl_scaler.transform(aapl_test.to_frame())
 LSTM models require sequential input data.
 A sliding window approach with a time step of 5 was used. 
 
+Example:
+
 ```python
 def create_sequences(dataset, time_steps):
   x, y = [], []
@@ -222,7 +224,9 @@ def create_sequences(dataset, time_steps):
   return np.array(x), np.array(y)
 ```
 
-The resulting sequences were reshaped into three-dimensional tensors (samples, time steps, features):
+The resulting sequences were reshaped into three-dimensional tensors (samples, time steps, features), which is the required format for LSTM networks.:
+
+Example: 
 
 ```python
 aapl_X_train, aapl_y_train = create_sequences(aapl_train_scaled, 5)
@@ -231,5 +235,25 @@ aapl_X_train = np.reshape(aapl_X_train, (aapl_X_train.shape[0], aapl_X_train.sha
 aapl_X_test = np.reshape(aapl_X_test, (aapl_X_test.shape[0], aapl_X_test.shape[1], 1))
 ```
 
-which is the required format for LSTM networks.
+### 5.3 LSTM Training 
+Separate LSTM models were trained for Apple, Microsoft, and Amazon.
 
+Training configuration:
+
+Example: 
+
+```python
+aapl_model = Sequential()
+aapl_model.add(LSTM(64, activation = "tanh", kernel_regularizer = l2(0.001), input_shape = (aapl_X_train.shape[1], 1)))
+aapl_model.add(Dense(25, kernel_regularizer = l2(0.001)))
+aapl_model.add(Dense(1))
+aapl_model.compile(optimizer = Adam(learning_rate = 0.001), loss = "mse", metrics = ['mse'])
+aapl_history = aapl_model.fit(aapl_X_train,
+                              aapl_y_train,
+                              validation_split = 0.1,
+                              batch_size = 64,
+                              epochs = 200,
+                              verbose = 1)
+
+
+```
