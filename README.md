@@ -190,5 +190,16 @@ The ARIMA rolling forecasts were generated on the testing dataset and evaluated 
 
 <img width="600" height="130" alt="amzn_m" src="https://github.com/user-attachments/assets/2f190135-1623-4faf-91c7-ca4c1041727c" />
 
+## 5. LSTM Model
+LSTM is a specialized Recurrent Neural Network (RNN) architecture designed to learn long-term temporal dependencies in sequential data. Unlike ARIMA, LSTM does not require stationarity assumptions and can capture nonlinear relationships commonly observed in financial markets.
 
+The LSTM architecture used in this project consisted of:
+- One LSTM layer with 64 units.
+- One hidden Dense layer with 25 neurons.
+- One output neuron for stock price prediction.
+- Adam optimizer.
+- Mean Squared Error loss function.
+
+### 5.1 Data Scaling 
+Neural networks perform better when input values are normalized. A Min-Max Scaler was applied to each training dataset and transformed all stock prices into the range of 0 and 1. The scaler was fitted on training data only and then applied to the testing data to avoid data leakage.
 
