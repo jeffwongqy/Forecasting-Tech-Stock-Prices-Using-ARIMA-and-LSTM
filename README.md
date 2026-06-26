@@ -203,3 +203,32 @@ The LSTM architecture used in this project consisted of:
 ### 5.1 Data Scaling 
 Neural networks perform better when input values are normalized. A Min-Max Scaler was applied to each training dataset and transformed all stock prices into the range of 0 and 1. The scaler was fitted on training data only and then applied to the testing data to avoid data leakage.
 
+### 5.2 Create Sequences
+4.2 Create Sequences
+
+LSTM models require sequential input data.
+
+A sliding window approach with a time step of 5 was used.
+
+For each sequence:
+
+Input:
+
+[
+[X_{t-5}, X_{t-4}, X_{t-3}, X_{t-2}, X_{t-1}]
+]
+
+Target:
+
+[
+X_t
+]
+
+The resulting sequences were reshaped into three-dimensional tensors:
+
+[
+(samples,\ time_steps,\ features)
+]
+
+which is the required format for LSTM networks.
+
