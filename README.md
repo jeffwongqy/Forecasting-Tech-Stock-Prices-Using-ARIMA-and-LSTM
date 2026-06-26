@@ -203,6 +203,8 @@ The LSTM architecture used in this project consisted of:
 ### 5.1 Data Scaling 
 Neural networks perform better when input values are normalized. A Min-Max Scaler was applied to each training dataset and transformed all stock prices into the range of 0 and 1. The scaler was fitted on training data only and then applied to the testing data to avoid data leakage.
 
+Example: 
+
 ```python
 aapl_scaler = MinMaxScaler()
 aapl_train_scaled = aapl_scaler.fit_transform(aapl_train.to_frame())
@@ -255,5 +257,34 @@ aapl_history = aapl_model.fit(aapl_X_train,
                               epochs = 200,
                               verbose = 1)
 
-
 ```
+
+L2 regularization was applied to reduce overfitting and improve generalization performance.
+
+During training, both training and validation metrics were monitored.
+
+### 5.4 Learning Curves
+Two learning curves were generated for each company: 
+
+#### 5.4.1 Loss Curves
+The training and validation loss curves illustrate how prediction error changed across epochs. A steadily decreasing loss indicates successful learning, while divergence between training and validation curves may indicate overfitting.
+
+**Apple:**
+<img width="855" height="547" alt="aapl_loss" src="https://github.com/user-attachments/assets/55ee35fe-28aa-4be9-a6e7-a2c3ac99c24e" />
+
+<img width="855" height="547" alt="msft_loss" src="https://github.com/user-attachments/assets/53a53dd7-c460-4d88-83ac-964b60d4c4ed" />
+
+<img width="855" height="547" alt="amzn_loss" src="https://github.com/user-attachments/assets/55319d94-01cf-4563-89fc-45859be71f6b" />
+
+
+#### 5.4.2 MSE 
+Mean Squared Error curves were also monitored throughout training. Consistent reductions in both training and validation MSE suggest that the model effectively captured stock price patterns without excessive memorization. The learning curves provide insight into model convergence and training stability.
+
+<img width="855" height="547" alt="aapl_mse" src="https://github.com/user-attachments/assets/93f7af00-6af9-443b-9f5a-dd9913e5330c" />
+
+<img width="855" height="547" alt="msft_mse" src="https://github.com/user-attachments/assets/04dfd07c-7c08-4ea4-8f91-822a00448488" />
+
+<img width="855" height="547" alt="amzn_mse" src="https://github.com/user-attachments/assets/643b5bee-296d-4942-bab2-186811bcda57" />
+
+
+
