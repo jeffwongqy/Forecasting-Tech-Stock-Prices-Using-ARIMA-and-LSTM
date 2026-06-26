@@ -203,32 +203,33 @@ The LSTM architecture used in this project consisted of:
 ### 5.1 Data Scaling 
 Neural networks perform better when input values are normalized. A Min-Max Scaler was applied to each training dataset and transformed all stock prices into the range of 0 and 1. The scaler was fitted on training data only and then applied to the testing data to avoid data leakage.
 
+```python
+aapl_scaler = MinMaxScaler()
+aapl_train_scaled = aapl_scaler.fit_transform(aapl_train.to_frame())
+aapl_test_scaled = aapl_scaler.transform(aapl_test.to_frame())
+```
+
 ### 5.2 Create Sequences
-4.2 Create Sequences
-
 LSTM models require sequential input data.
+A sliding window approach with a time step of 5 was used. 
 
-A sliding window approach with a time step of 5 was used.
+```python
+def create_sequences(dataset, time_steps):
+  x, y = [], []
+  for i in range(len(dataset) - time_steps):
+    x.append(dataset[i:i+time_steps])
+    y.append(dataset[i+time_steps])
+  return np.array(x), np.array(y)
+```
 
-For each sequence:
+The resulting sequences were reshaped into three-dimensional tensors (samples, time steps, features):
 
-Input:
-
-[
-[X_{t-5}, X_{t-4}, X_{t-3}, X_{t-2}, X_{t-1}]
-]
-
-Target:
-
-[
-X_t
-]
-
-The resulting sequences were reshaped into three-dimensional tensors:
-
-[
-(samples,\ time_steps,\ features)
-]
+```python
+aapl_X_train, aapl_y_train = create_sequences(aapl_train_scaled, 5)
+aapl_X_test, aapl_y_test = create_sequences(aapl_test_scaled, 5)
+aapl_X_train = np.reshape(aapl_X_train, (aapl_X_train.shape[0], aapl_X_train.shape[1], 1))
+aapl_X_test = np.reshape(aapl_X_test, (aapl_X_test.shape[0], aapl_X_test.shape[1], 1))
+```
 
 which is the required format for LSTM networks.
 
