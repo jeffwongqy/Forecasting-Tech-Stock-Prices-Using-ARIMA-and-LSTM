@@ -190,10 +190,11 @@ The ARIMA rolling forecasts were generated on the testing dataset and evaluated 
 
 <img width="600" height="130" alt="amzn_m" src="https://github.com/user-attachments/assets/2f190135-1623-4faf-91c7-ca4c1041727c" />
 
+
 ## 5. LSTM Model
 LSTM is a specialized Recurrent Neural Network (RNN) architecture designed to learn long-term temporal dependencies in sequential data. Unlike ARIMA, LSTM does not require stationarity assumptions and can capture nonlinear relationships commonly observed in financial markets.
 
-The LSTM architecture used in this project consisted of:
+The **LSTM architecture** used in this project consisted of:
 - One LSTM layer with 64 units.
 - One hidden Dense layer with 25 neurons.
 - One output neuron for stock price prediction.
@@ -203,7 +204,7 @@ The LSTM architecture used in this project consisted of:
 ### 5.1 Data Scaling 
 Neural networks perform better when input values are normalized. A Min-Max Scaler was applied to each training dataset and transformed all stock prices into the range of 0 and 1. The scaler was fitted on training data only and then applied to the testing data to avoid data leakage.
 
-Example: 
+**Example:** 
 
 ```python
 aapl_scaler = MinMaxScaler()
@@ -215,7 +216,7 @@ aapl_test_scaled = aapl_scaler.transform(aapl_test.to_frame())
 LSTM models require sequential input data.
 A sliding window approach with a time step of 5 was used. 
 
-Example:
+**Example:**
 
 ```python
 def create_sequences(dataset, time_steps):
@@ -228,7 +229,7 @@ def create_sequences(dataset, time_steps):
 
 The resulting sequences were reshaped into three-dimensional tensors (samples, time steps, features), which is the required format for LSTM networks.:
 
-Example: 
+**Example:** 
 
 ```python
 aapl_X_train, aapl_y_train = create_sequences(aapl_train_scaled, 5)
@@ -242,7 +243,7 @@ Separate LSTM models were trained for Apple, Microsoft, and Amazon.
 
 Training configuration:
 
-Example: 
+**Example:** 
 
 ```python
 aapl_model = Sequential()
@@ -285,6 +286,39 @@ Mean Squared Error curves were also monitored throughout training. Consistent re
 <img width="855" height="547" alt="msft_mse" src="https://github.com/user-attachments/assets/04dfd07c-7c08-4ea4-8f91-822a00448488" />
 
 <img width="855" height="547" alt="amzn_mse" src="https://github.com/user-attachments/assets/643b5bee-296d-4942-bab2-186811bcda57" />
+
+### 5.5 Model Evaluation 
+After training, predictions were generated using the testing datasets. Since the predictions were produced in normalized form, they were converted back to their original stock price scale using inverse transformation.
+
+**Example:**
+
+```python
+aapl_predictions = aapl_model.predict(aapl_X_test)
+aapl_predictions = aapl_scaler.inverse_transform(aapl_predictions)
+aapl_y_test = aapl_scaler.inverse_transform(aapl_y_test.reshape(-1, 1))
+```
+
+##### 5.5.1 
+Two evaluation metrics were used:
+
+* **Root Mean Squared Error (RMSE):** measures average prediction error magnitude.
+
+* **Coefficient of Determination (R²):** measures how well the model explains the variability in stock prices.
+
+**Apple:**
+<img width="850" height="547" alt="aapl" src="https://github.com/user-attachments/assets/b4703f23-154d-45e7-a95d-0e77537f62dd" />
+
+<img width="660" height="170" alt="aapl_m" src="https://github.com/user-attachments/assets/6133fdb1-454c-48f2-9933-aed38e3afb61" />
+
+**Microsoft:**
+<img width="850" height="547" alt="msft" src="https://github.com/user-attachments/assets/e7e0d00b-5b91-4601-8e91-99d4eb2980d6" />
+
+<img width="660" height="170" alt="msft_m" src="https://github.com/user-attachments/assets/185a934f-ad7d-4c93-a5d5-7bdf6212299d" />
+
+**Amazon:** 
+<img width="850" height="547" alt="amzn" src="https://github.com/user-attachments/assets/1a81f32f-ca92-479b-8145-221b8d36caa9" />
+
+<img width="660" height="170" alt="amzn_m" src="https://github.com/user-attachments/assets/29526ceb-c79e-413c-8fa4-e9c3a817f8e6" />
 
 
 
